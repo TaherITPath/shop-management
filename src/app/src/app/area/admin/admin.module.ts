@@ -6,6 +6,15 @@ import { EmployeeAddUpdateComponent } from './modules/employee/employee-add-upda
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { AdminComponent } from './admin.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -16,10 +25,27 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     EmployeeAddUpdateComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    AdminComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatListModule,
+    MatIconModule
+  ],
+  exports:[
+    EmployeeListComponent,
+    EmployeeAddUpdateComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent,
+    AdminComponent,
+    MatIconModule
   ]
 })
 export class AdminModule { }

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
+  sideBarOpen = true;
 
+  constructor() { }
+
+  ngOnInit() { }
+
+
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }

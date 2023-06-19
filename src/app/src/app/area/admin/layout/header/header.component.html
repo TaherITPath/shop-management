@@ -1,1 +1,8 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <mat-icon (click)="toggleSideBar()">menu</mat-icon>
+      <span>Shop Management</span>
+      <span class="spacer"></span>
+        <mat-icon routerLink="">logout</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
