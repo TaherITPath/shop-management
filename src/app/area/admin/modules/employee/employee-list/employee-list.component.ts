@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../../../model/employee.model';
 import { EmployeesService } from '../../../services/employee/employees.service';
 import { MatDialog } from '@angular/material/dialog';
+import { EmployeeDialogBoxComponent } from '../employee-dialog-box/employee-dialog-box.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -65,8 +66,8 @@ export class EmployeeListComponent {
     )  
   }
   openDialog(cId:number) {
-    // this.dialog.open(EmployeeDialogBoxComponent, {
-    //   data: this.employees.find(x=>x.id == cId)
-    // });
+    this.dialog.open(EmployeeDialogBoxComponent, {
+      data: this.employees.find(x=>x.id == cId)
+    });
   }
 }

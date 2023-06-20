@@ -11,6 +11,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CustomInterceptor } from './services/custom.interceptor';
+import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
 export function tokenGetter(){
   return localStorage.getItem("jwt");
@@ -18,7 +19,8 @@ export function tokenGetter(){
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

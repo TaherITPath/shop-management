@@ -7,6 +7,7 @@ import { EmployeeListComponent } from './area/admin/modules/employee/employee-li
 import { AdminLoginComponent } from './common/admin-login/admin-login.component';
 import { authGuard } from './services/auth.guard';
 import { EmployeeAddUpdateComponent } from './area/admin/modules/employee/employee-add-update/employee-add-update.component';
+import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
     component:AdminComponent,
     canActivate:[authGuard],
     children:[{
-       path:'dashboard',
+       path:'',
       component:AdminDashboardComponent,
       canActivate:[authGuard]
     },
@@ -40,7 +41,7 @@ const routes: Routes = [
 },
   {
     path:'**',
-    component:UserComponent
+    component:PageNotFoundComponent
   }
 ];
 

@@ -28,6 +28,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmployeeDialogBoxComponent } from './modules/employee/employee-dialog-box/employee-dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
-    AdminComponent
+    AdminComponent,
+    EmployeeDialogBoxComponent
   ],
   imports: [
     CommonModule,
