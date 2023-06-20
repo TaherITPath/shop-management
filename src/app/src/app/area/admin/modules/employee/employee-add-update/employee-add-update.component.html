@@ -1,1 +1,99 @@
-<p>employee-add-update works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <mat-card style="margin-top: 10px;">
+          <mat-card-header>
+            <mat-card-title *ngIf="form.controls['name'].value == 0">Add Employee</mat-card-title>
+            <mat-card-title *ngIf="form.controls['name'].value != 0">Edit <span style="color: red;">{{form.controls['name'].value}}</span></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <br>
+            <form [formGroup]="form" (submit)="addEmployee()">
+              <input matInput formControlName="id" hidden>
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Enter name" formControlName="name">
+                  <mat-error *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
+                    <span *ngIf="form.controls['name'].hasError('required')">Name is required.</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+        
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" placeholder="Enter email" formControlName="email">
+                  <mat-error *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
+                    <span *ngIf="form.controls['email'].hasError('required')">Email is required.</span>
+                    <span *ngIf="form.controls['email'].hasError('email')">Please enter a valid email address.</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+        
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Select an option</mat-label>
+                  <mat-select  formControlName="department">
+                    <mat-option>None</mat-option>
+                    <mat-option value=".Net">.Net</mat-option>
+                    <mat-option value="PHP">PHP</mat-option>
+                    <mat-option value="Mobile">Mobile</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="form.controls['department'].invalid && (form.controls['department'].dirty || form.controls['department'].touched)">
+                    <span *ngIf="form.controls['department'].hasError('required')">Department is required.</span>
+                  </mat-error>
+                </mat-form-field>
+                
+                <!-- <mat-form-field appearance="outline">
+                  <mat-label>Department</mat-label>
+                  <input matInput placeholder="Enter department" formControlName="department">
+                  <mat-error *ngIf="form.controls['department'].invalid && (form.controls['department'].dirty || form.controls['department'].touched)">
+                    <span *ngIf="form.controls['department'].hasError('required')">Department is required.</span>
+                  </mat-error>
+                </mat-form-field> -->
+              </div>
+        
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" placeholder="Enter password" formControlName="password">
+                  <mat-error *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)">
+                    <span *ngIf="form.controls['password'].hasError('required')">Password is required.</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+        
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone</mat-label>
+                  <input matInput placeholder="Enter phone" formControlName="phone">
+                  <mat-error *ngIf="form.controls['phone'].invalid && (form.controls['phone'].dirty || form.controls['phone'].touched)">
+                    <span *ngIf="form.controls['phone'].hasError('required')">Phone number is required.</span>
+                    <span *ngIf="form.controls['phone'].hasError('pattern')">Please enter a valid phone number.</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+        
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Salary</mat-label>
+                  <input matInput type="number" placeholder="Enter salary" formControlName="salary">
+                  <mat-error *ngIf="form.controls['salary'].invalid && (form.controls['salary'].dirty || form.controls['salary'].touched)">
+                    <span *ngIf="form.controls['salary'].hasError('required')">Salary is required.</span>
+                    <span *ngIf="form.controls['salary'].hasError('pattern')">Please enter a valid number for the salary.</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <button mat-raised-button color="primary" [disabled]="form.invalid" style="margin: 5px;">Submit</button>
+              <button mat-raised-button color="warn" routerLink="/admin/employee">Cancel</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+        
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+  

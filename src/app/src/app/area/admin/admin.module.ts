@@ -7,16 +7,27 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { AdminComponent } from './admin.component';
 import {MatIconModule} from '@angular/material/icon';
-
-
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
+import { JwtModule } from '@auth0/angular-jwt';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +47,20 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     MatMenuModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatTreeModule,
+    MatTabsModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   exports:[
     EmployeeListComponent,
@@ -45,7 +69,22 @@ import {MatIconModule} from '@angular/material/icon';
     HeaderComponent,
     SidebarComponent,
     AdminComponent,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatTreeModule,
+    MatTabsModule,
+    MatDialogModule
   ]
 })
 export class AdminModule { }
