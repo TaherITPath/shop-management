@@ -11,7 +11,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CustomInterceptor } from './services/custom.interceptor';
-import { EmployeeDialogBoxComponent } from './src/app/src/app/area/admin/modules/employee/employee-dialog-box/employee-dialog-box.component';
 
 export function tokenGetter(){
   return localStorage.getItem("jwt");
@@ -19,8 +18,7 @@ export function tokenGetter(){
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLoginComponent,
-    EmployeeDialogBoxComponent
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
